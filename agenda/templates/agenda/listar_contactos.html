@@ -1,0 +1,52 @@
+<!-- agenda/agregar_contacto.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+</head>
+<body>
+    <div id="contenido">
+    {% load humanize %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+
+
+    <br><br><br>
+    <div class="card">
+        <div class="card-body">
+
+            <h2>Listado de contactoss</h2>
+            <hr>
+            <table class="table table-striped table-hover table-responsive-sm">
+
+                <tr>
+            
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>email</th>
+                    <th>fec Nacim</th>
+                    <th>domicilio</th>
+                    <th>Provincia</th>
+                </tr>
+            
+                {% for c in contactos %}
+            
+                <tr>
+                    <td>{{ c.DNI | title }}</td>
+                    <td>{{ c.nombre| title }}</td>
+                    <td>{{ c.email | title }}</td>
+                    <td>{{ c.fec_nac }}</td>
+                    <td>{{ c.domicilio| title }}</td>
+                    <td>{{ c.provincia | title }}</td>
+                    
+                
+                </tr>
+                {% endfor %}
+            
+            </table>
+
+        
+    </body>
+</html>
